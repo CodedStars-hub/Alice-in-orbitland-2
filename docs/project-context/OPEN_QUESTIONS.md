@@ -24,3 +24,5 @@ Evidence: [R1/B1](README.md#evidence-register) and inspected gaps in L1. This ba
 | Before public release | License holder placeholder; current advisories and live CI — Unresolved | Maintainer identity, current dependency audit with exposure assessment, actual Actions results |
 
 No real scientific benchmark, uncertainty ensemble, or independent evaluation has been demonstrated. Do not replace absent evidence with plausible numbers.
+
+Phase 2 update: [ADR 0003](../adr/0003-spice-geometry.md) resolves a scoped DE440 frame/kernel/NONE policy, SPICE UTC conversion and radial pck00011-sphere observer. The earlier rows preserve the broader questions; terrain/datum reconciliation, general ellipsoid/normal handling, apparent-disc geometry and independent surface/UTC comparisons remain open. See [traceability](RESEARCH_TRACEABILITY.md).

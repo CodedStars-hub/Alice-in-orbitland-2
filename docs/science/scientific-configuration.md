@@ -1,5 +1,7 @@
 # Scientific configuration contracts
 
+This page specifies the Phase 1 contract-only API. The separate [Phase 2 SPICE adapter](spice-integration.md) now computes the explicitly supported geometry; contract objects alone do not load assets or perform those operations.
+
 `ScientificConfiguration` groups an `Observer`, `UtcInterval`, three required numerical settings and independent Sun/Earth visibility definitions. There are no scientific numerical defaults.
 
 | Field | Unit / validation | Meaning and limit |

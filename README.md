@@ -2,15 +2,15 @@
 
 A NASA Space Apps Challenge project exploring lunar south-pole site and mission-window analysis. The long-term aim is terrain-aware geometric sunlight, geometric Earth visibility, mission constraints, and candidate comparisons using NAIF SPICE and NASA LOLA terrain data.
 
-**Phase 1 contracts implemented, pending PR review:** immutable coordinate, observer, UTC, configuration, provenance and status contracts now accompany the Phase 0 packages, health API, React development placeholder, tests, tooling, and documentation. No astronomical/terrain calculations, datasets, optimization, map UI, authentication, database, or deployment exist. This is a decision-support research tool, not a landing-safety certification system. No NASA endorsement or scientific verification is claimed.
+**Phase 2 geometric SPICE engine implemented, pending PR review:** immutable coordinate, observer, UTC, configuration, provenance and status contracts now accompany the Phase 0 packages, health API, React development placeholder, tests, tooling, and documentation. Real uncorrected Sun/Earth center directions are available in the standalone core; no terrain calculations, terrain datasets, optimization, map UI, authentication, database, or deployment exist. This is a decision-support research tool, not a landing-safety certification system. No NASA endorsement or general physical validation is claimed.
 
 ## Architecture
 
 - `apps/web`: React + TypeScript + Vite; future HTTP client of the API.
 - `apps/api`: FastAPI HTTP boundary, depending on `lunar_core`.
-- `packages/lunar_core`: standalone scientific package with immutable input contracts, no runtime dependencies or physical models; never imports the API or frontend.
+- `packages/lunar_core`: standalone scientific package with immutable input contracts, a scoped SpiceyPy geometry adapter, no API/UI dependencies; never imports the API or frontend.
 - `tests/integration`: installed-component smoke tests.
-- `data/manifests`: future small, reviewable provenance records; no downloaded data.
+- `data/manifests`: reviewed small text provenance records; downloaded kernels remain excluded from Git.
 
 See [architecture](docs/architecture/overview.md), [decision record](docs/adr/0001-monorepo-and-stack.md), [modeling principles](docs/science/modeling-principles.md), and [validation strategy](docs/validation/strategy.md).
 
@@ -51,5 +51,7 @@ npm uses **one root `package-lock.json`** for the workspace. Run `npm install` f
 CORS defaults to the two explicit Vite localhost origins. Override with comma-separated `LUNAR_CORS_ORIGINS` (explicit HTTP(S) origins without trailing slash), or an empty value to disable browser cross-origin access. Credentials are disabled. Server-to-server requests do not rely on CORS. Development servers bind to loopback.
 
 Contract API: `lunar_core.contracts` and `lunar_core.errors`. Start with [ADR 0002](docs/adr/0002-scientific-contracts.md), [coordinate contracts](docs/science/coordinate-contracts.md), [time contracts](docs/science/time-contracts.md), [configuration](docs/science/scientific-configuration.md), and [provenance](docs/science/provenance-contracts.md).
+
+See [SPICE integration](docs/science/spice-integration.md) for explicit verified-kernel acquisition and opt-in real tests; default checks do not download kernels. [Research traceability](docs/project-context/RESEARCH_TRACEABILITY.md) separates software coverage from scientific evidence.
 
 Read [data safety](data/README.md), [contributing](CONTRIBUTING.md), [security](SECURITY.md), and the [roadmap](docs/development/roadmap.md). CI is configured; a local pass does not establish a GitHub Actions run or scientific validation.

@@ -1,14 +1,14 @@
 # Development roadmap
 
-This is the canonical roadmap. Phase 0 software is completed at bootstrap revision `c582d14`; Phase 1 input contracts are implemented on the feature branch, pending PR/CI review; no astronomical/terrain calculations exist. Later implementation requires explicit task authorization. Plans are not delivery, accuracy, or operational-readiness commitments.
+This is the canonical roadmap. Phase 0 software is completed at bootstrap revision `c582d14`; Phase 1 contracts merged at `45370fd`. Phase 2 geometric Sun/Earth directions are implemented on `feat/spice-geometry`, pending PR/CI review; terrain calculations remain unimplemented. Later implementation requires explicit task authorization. Plans are not delivery, accuracy, or operational-readiness commitments.
 
 ## Phases and acceptance focus
 
 | Phase | Milestone | Scope / acceptance focus | Status |
 | --- | --- | --- | --- |
 | 0 | Repository foundation | Independent packages, health API/CORS, honest placeholder, tests/tooling, CI configuration and policies | Completed software foundation; CI execution not verified |
-| 1 | Scientific contracts | Units, frame/shape/time conventions, site/observer height, numerical policies, provenance and missing-data states; synthetic boundary/failure tests | Implemented contracts; pending PR/CI review |
-| 2 | SPICE integration | Verified offline kernel manifests, coverage/error handling, frame/time conversions and compatible reference comparisons | Planned |
+| 1 | Scientific contracts | Units, frame/shape/time conventions, site/observer height, numerical policies, provenance and missing-data states; synthetic boundary/failure tests | Merged in PR #2 |
+| 2 | SPICE integration | Verified local kernels, scoped UTC/ET, DE440 frame/observer geometry, Sun/Earth center vectors and NAIF example consistency | Implemented scoped geometry; pending PR/CI review; Horizons deferred |
 | 3 | Terrain ingestion | Select/verify LOLA product; datum/frame/no-data contracts, checksums, processing provenance, sampling and uncertainty studies | Planned |
 | 4 | Horizon geometry | Observer-specific terrain horizon, coverage handling, synthetic cases and discretization/convergence assessment | Planned |
 | 5 | Visibility geometry | Defined solar/Earth center/disc observables, finite-disc assumptions; distinguish power/link reliability | Planned |

@@ -17,7 +17,7 @@ Dependency direction is web → HTTP API → lunar_core. The API does not yet in
 
 ## Phase 1 extension
 
-`lunar_core.contracts` now implements immutable coordinates, observer, UTC/time interval, explicit configuration, provenance references and scientific status; `lunar_core.errors` defines typed failures. Core still has no runtime dependencies or physical calculations. See [ADR 0002](../adr/0002-scientific-contracts.md). The Phase 0 table above is retained as the baseline snapshot.
+`lunar_core.contracts` now implements immutable coordinates, observer, UTC/time interval, explicit configuration, provenance references and scientific status; `lunar_core.errors` defines typed failures. That Phase 1 baseline had no runtime dependencies or physical calculations. Phase 2 now adds the separated SpiceyPy adapter; see [ADR 0003](../adr/0003-spice-geometry.md). See [ADR 0002](../adr/0002-scientific-contracts.md). The Phase 0 table above is retained as the baseline snapshot.
 
 ## Proposed scientific data flow
 

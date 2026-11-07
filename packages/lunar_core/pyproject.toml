@@ -5,8 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lunar-core"
 version = "0.1.0"
-description = "Scientific engine boundary for Lunar Navigator; no models implemented"
+description = "Scientific contracts and scoped SPICE lunar geometry"
 requires-python = ">=3.12,<3.13"
+dependencies = ["spiceypy==8.3.0"]
 license = "MIT"
 
 [tool.setuptools.packages.find]

@@ -1,5 +1,7 @@
 # Provenance, status and failures
 
+This page specifies the Phase 1 contract-only API. The separate [Phase 2 SPICE adapter](spice-integration.md) now computes the explicitly supported geometry; contract objects alone do not load assets or perform those operations.
+
 Public records are defined in `lunar_core.contracts`; typed exceptions in `lunar_core.errors`. All records are frozen/slotted; collections are immutable tuples. JSON collections are arrays and nested records are objects. `from_dict`/`from_json` validate exact fields and nested content; `to_json` uses sorted keys and rejects nonfinite numbers. Serialized schema changes require review; `Record.schema_version` is 1 and participates in configuration identity, but is not an extra JSON field.
 
 ## Provenance records

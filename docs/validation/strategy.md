@@ -11,3 +11,5 @@ Future scientific implementation must begin with explicit contracts and acceptan
 5. Review: require domain review before scientific accuracy claims. Publish scope-specific evidence and known limitations; no universal validation badge or landing-safety claim.
 
 Offline reference runs must fail on missing/mismatched inputs rather than silently replacing them. Large data and results stay outside Git. CI should use small deterministic tests; future data-dependent checks need explicit assets and a separately documented workflow. No reference agreement or convergence results exist today.
+
+Phase 2 now adds synthetic SPICE-boundary/local-geometry checks and opt-in verified-kernel integration. The [SPICE evidence report](spice-geometry-validation.md) records limited published NAIF Moon-center reference consistency and measured numerical checks separately from physical uncertainty and deferred independent comparisons. No global scientific-validity claim follows.

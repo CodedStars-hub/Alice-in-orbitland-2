@@ -1,6 +1,6 @@
 # Scientific data policy
 
-No NASA terrain data or SPICE kernels are included or downloaded in Phase 0. NASA data must not be blindly committed: products can be very large, have specific usage/attribution requirements, change upstream, and depend on compatible frames, time coverage, and processing assumptions.
+No NASA terrain data or SPICE kernels were included or downloaded in Phase 0. Phase 2 adds a reviewed [NAIF manifest](manifests/spice-de440.json) and explicit acquisition script; kernel bytes stay ignored. NASA data must not be blindly committed: products can be very large, have specific usage/attribution requirements, change upstream, and depend on compatible frames, time coverage, and processing assumptions.
 
 Future acquisitions must have a small text manifest under `manifests/` identifying the provider, exact product/version, canonical retrieval URL, retrieval date, applicable attribution/terms, byte size, and SHA-256 checksum. Record SPICE kernel roles/load order and time coverage, terrain reference frame, datum, units, resolution, and processing software/configuration as relevant. Never invent manifest values.
 

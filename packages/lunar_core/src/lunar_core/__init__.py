@@ -1,4 +1,4 @@
-"""Lunar Navigator core: immutable contracts; no physical models implemented.
+"""Lunar Navigator core: immutable contracts and scoped SPICE geometry.
 
 Public contract types live in ``lunar_core.contracts`` and errors in ``lunar_core.errors``.
 """

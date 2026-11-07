@@ -1,6 +1,6 @@
 # Modeling principles
 
-Physical scientific models are not implemented or validated. Phase 1 provides immutable input contracts and metadata only; see [ADR 0002](../adr/0002-scientific-contracts.md). Future work must define coordinate frames, lunar shape/datum, units, time scales, kernel coverage, terrain resolution, sampling, tolerances, and uncertainty before producing results.
+A scoped geometric SPICE adapter is implemented but physical site analysis is not validated; see [ADR 0003](../adr/0003-spice-geometry.md). Phase 1 provides immutable input contracts and metadata only; see [ADR 0002](../adr/0002-scientific-contracts.md). Future work must define coordinate frames, lunar shape/datum, units, time scales, kernel coverage, terrain resolution, sampling, tolerances, and uncertainty before producing results.
 
 Geometric sunlight describes whether a modeled solar direction or disk is obstructed under stated terrain and geometry assumptions. It is not electrical power. Power additionally depends on incidence, array geometry, efficiency, temperature, degradation, storage, operations, and other mission assumptions. Finite solar disk and partial occultation need explicit treatment.
 

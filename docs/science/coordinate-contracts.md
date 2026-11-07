@@ -1,5 +1,7 @@
 # Coordinate and observer contracts
 
+This page specifies the Phase 1 contract-only API. The separate [Phase 2 SPICE adapter](spice-integration.md) now computes the explicitly supported geometry; contract objects alone do not load assets or perform those operations.
+
 Implemented contract API: `lunar_core.contracts`; decision: [ADR 0002](../adr/0002-scientific-contracts.md). These are input representations, not validated positions or coordinate transformations.
 
 `LunarCoordinates` requires `latitude_deg`, `longitude_deg`, `LunarFrame`, `LatitudeConvention.PLANETOCENTRIC`, and `LongitudeConvention.EAST_POSITIVE`. Direct constructors require enum instances; JSON uses their string values. Built-in int/float values are accepted and stored as floats; bool, strings, Decimal, NaN, infinities, and overflowing integers are rejected. Latitude is inclusive [-90, 90]. Longitude is normalized modulo 360 into [0, 360); signed zero is canonicalized. Binary floating-point rounding can lose small offsets, especially for large magnitudes. Normalization is representation-only, not a frame transformation.

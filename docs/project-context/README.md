@@ -12,6 +12,7 @@ This directory preserves project intent, supplied research, and implementation e
 | [Architecture guide](ARCHITECTURE_AND_DEPENDENCIES.md) | Actual components versus proposed scientific data flow |
 | [Implementation status](IMPLEMENTATION_STATUS.md) | Revision-specific evidence and verification limits |
 | [Development workflow](DEVELOPMENT_WORKFLOW.md) | Review and Git checkpoints |
+| [Research traceability](RESEARCH_TRACEABILITY.md) | RC requirements, stable decisions, modules/tests and separate scientific evidence |
 | [Open questions](OPEN_QUESTIONS.md) | Decisions and experiments blocking future phases |
 
 Canonical sources remain [AGENTS.md](../../AGENTS.md), [architecture](../architecture/overview.md), [ADR 0001](../adr/0001-monorepo-and-stack.md), [modeling principles](../science/modeling-principles.md), [validation strategy](../validation/strategy.md), [data policy](../../data/README.md), [contributing](../../CONTRIBUTING.md), and the [roadmap](../development/roadmap.md). This directory links those policies rather than replacing them. Record future accepted architectural decisions in ADRs and update this index/ledger to point to them.
@@ -30,3 +31,5 @@ No scientific publication or NASA/NAIF/PDS technical reference was accessed and 
 ## Evidence classification
 
 Use exactly these decision statuses: **Accepted and implemented**, **Accepted but not implemented**, **Provisional research recommendation**, **Deferred**, **Unresolved**, **Empirically validated**. Status describes the stated decision's scope, not every related feature. “Empirically validated” requires linked evidence, conditions, and tolerances; no scientific decision currently has that status. A research recommendation remains provisional until explicitly accepted.
+
+Phase 1 merged in PR #2 at `45370fd`; Phase 2 source selections and scoped evidence are in [ADR 0003](../adr/0003-spice-geometry.md), [traceability](RESEARCH_TRACEABILITY.md), and [SPICE validation](../validation/spice-geometry-validation.md). The original supplied research remains historical context, not inspected literature.

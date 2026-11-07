@@ -209,3 +209,16 @@ Evidence codes and status definitions are in the [index](README.md). R1 is suppl
 ## Phase 1 evidence
 
 The authorized Phase 1 prompt selects the representation rules recorded in [ADR 0002](../adr/0002-scientific-contracts.md); contract software checks are recorded in [implementation status](IMPLEMENTATION_STATUS.md). R1 remains historical supplied research. No provisional horizon, visibility, event, map or optimization algorithm has been promoted into a validated implementation.
+
+## Phase 2 scoped selections and evidence
+
+[ADR 0003](../adr/0003-spice-geometry.md) refines these existing IDs without replacing their broader unresolved/deferred scope:
+
+- D02/D04: explicit DE440 frame mapping, geometric NONE target-center vectors, verified bundle and SPICE UTC/ET boundary are Accepted and implemented for the documented epoch scope. General transformations and apparent corrections remain outside scope.
+- D03: radial height above the named pck00011 sphere is Accepted and implemented as an initial model; terrain-relative and surface-normal realization remain unsupported. No terrain elevation is inferred.
+- D08: Earth-center geometric direction is implemented; choosing a finite-disc visibility observable remains Unresolved.
+- D12/D14: manifest/observer identity and geometry JSON provenance are implemented; full cache policy, derived-data lineage and CSV interoperability remain incomplete.
+- D15: a published Moon-center reference consistency case and numerical software checks exist, as documented in [validation](../validation/spice-geometry-validation.md). They do not make the system empirically validated for physical site analysis.
+- D16: exclusive single-process SPICE ownership is implemented. Worker infrastructure remains deferred.
+
+See [traceability](RESEARCH_TRACEABILITY.md) for implementation versus scientific evidence and remaining gaps. No horizon, illumination, temporal-event, optimization or map recommendation has been silently finalized.

@@ -1,0 +1,91 @@
+{
+  "identifier": "naif-de440-lunar-v1",
+  "assets": [
+    {
+      "identifier": "naif0012.tls",
+      "version": "0012",
+      "role": "leapseconds",
+      "kernel_type": "LSK",
+      "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+      "checksum": {
+        "algorithm": "sha256",
+        "digest": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+      },
+      "local_path": "naif0012.tls",
+      "byte_size": 5257.0,
+      "coverage_note": "Pinned leap history; no prediction guarantee",
+      "redistribution_note": "NAIF rules https://naif.jpl.nasa.gov/naif/rules.html; obtain from NAIF; no redistribution in this repository"
+    },
+    {
+      "identifier": "pck00011.tpc",
+      "version": "00011",
+      "role": "constants",
+      "kernel_type": "PCK",
+      "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc",
+      "checksum": {
+        "algorithm": "sha256",
+        "digest": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+      },
+      "local_path": "pck00011.tpc",
+      "byte_size": 131226.0,
+      "coverage_note": "Static BODY301_RADII sphere: 1737.4 km",
+      "redistribution_note": "NAIF rules https://naif.jpl.nasa.gov/naif/rules.html; obtain from NAIF; no redistribution in this repository"
+    },
+    {
+      "identifier": "moon_pa_de440_200625.bpc",
+      "version": "DE440 200625",
+      "role": "lunar_orientation",
+      "kernel_type": "PCK",
+      "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de440_200625.bpc",
+      "checksum": {
+        "algorithm": "sha256",
+        "digest": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f"
+      },
+      "local_path": "moon_pa_de440_200625.bpc",
+      "byte_size": 12863488.0,
+      "coverage_note": "PCK body 31008 ET [-14200747200,20514081600]",
+      "redistribution_note": "NAIF rules https://naif.jpl.nasa.gov/naif/rules.html; obtain from NAIF; no redistribution in this repository"
+    },
+    {
+      "identifier": "moon_de440_250416.tf",
+      "version": "250416",
+      "role": "lunar_frames",
+      "kernel_type": "FK",
+      "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_de440_250416.tf",
+      "checksum": {
+        "algorithm": "sha256",
+        "digest": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+      },
+      "local_path": "moon_de440_250416.tf",
+      "byte_size": 19478.0,
+      "coverage_note": "Static DE440 frame definitions; orientation requires binary PCK",
+      "redistribution_note": "NAIF rules https://naif.jpl.nasa.gov/naif/rules.html; obtain from NAIF; no redistribution in this repository"
+    },
+    {
+      "identifier": "de440s.bsp",
+      "version": "DE440s",
+      "role": "ephemeris",
+      "kernel_type": "SPK",
+      "source_url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp",
+      "checksum": {
+        "algorithm": "sha256",
+        "digest": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+      },
+      "local_path": "de440s.bsp",
+      "byte_size": 32726016.0,
+      "coverage_note": "Moon SPK ET [-4734072000,4735368000]; targets checked at evaluation",
+      "redistribution_note": "NAIF rules https://naif.jpl.nasa.gov/naif/rules.html; obtain from NAIF; no redistribution in this repository"
+    }
+  ],
+  "supported_interval": {
+    "start": {
+      "value": "2000-01-01T00:00:00Z",
+      "scale": "UTC"
+    },
+    "end": {
+      "value": "2025-01-01T00:00:00Z",
+      "scale": "UTC"
+    }
+  },
+  "retrieval_date": "2026-11-07"
+}

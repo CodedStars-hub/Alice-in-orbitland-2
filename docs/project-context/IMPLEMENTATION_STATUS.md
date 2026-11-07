@@ -1,5 +1,16 @@
 # Implementation status
 
+Current snapshot: 2026-11-07. Phase 1 merged in PR #2 at `45370fd`. Phase 2 is implemented on `feat/spice-geometry`, pending PR/CI review. Historical Phase 1 delivery blockers below are superseded: connector access now works and its prerequisite PR is merged.
+
+## Current Phase 2 state
+
+Core now implements verified local kernel/session management, SPICE UTC/ET, explicit DE440 frames, radial spherical observers and geometric Sun/Earth center vectors/local angles with JSON provenance. Dependencies added: SpiceyPy 8.3.0 and resolved NumPy 2.5.4 in the root lock. No terrain, horizons, disc visibility, events, mission evaluation, optimization, scientific API/UI endpoint or deployment exists. The bootstrap health/placeholder still describe unavailable API/UI science; they do not expose the new standalone core engine.
+
+Sources and exact assets: [manifest](../../data/manifests/spice-de440.json). Scientific scope: [ADR 0003](../adr/0003-spice-geometry.md). Separate software/reference evidence: [validation](../validation/spice-geometry-validation.md). Requirement mapping: [traceability](RESEARCH_TRACEABILITY.md). Large kernels remain ignored and no generated result bundle is committed. Local verification: default full Python suite 155 passed/16 optional skipped; verified-kernel full suite 171 passed; default independent core 150 passed/16 skipped (166 with real kernels). Lint/types/build, one frontend test, pre-commit and dependency checks pass. Remote CI is pending delivery verification; physical accuracy remains unvalidated beyond the scoped reference consistency evidence.
+
+## Historical Phase 1 snapshot
+
+
 Snapshot: 2026-11-07. Bootstrap baseline: `c582d144ce5f31de79d55af3ff2e5faed765b9fe`. Documentation merged in `a6082fd` (PR #1). Phase 1 implementation is on `feat/scientific-contracts`, pending PR/CI review. Update this record when implementation or evidence changes; it is not a live CI badge.
 
 ## Evidence-backed state

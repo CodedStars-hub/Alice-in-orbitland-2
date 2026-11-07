@@ -1,5 +1,7 @@
 # UTC time contracts
 
+This page specifies the Phase 1 contract-only API. The separate [Phase 2 SPICE adapter](spice-integration.md) now computes the explicitly supported geometry; contract objects alone do not load assets or perform those operations.
+
 `UtcTimestamp(value, scale)` requires a timezone-aware Python datetime and `TimeScale.UTC`. Offset-aware inputs normalize to UTC; naive datetimes and ET scale labels are rejected. `UtcTimestamp.parse(text)` accepts the supported ISO 8601 subset `YYYY-MM-DDTHH:MM:SS[.ffffff](Z|±HH:MM)`, with at most six fractional digits and a valid numeric offset. Unknown offset `-00:00`, dates without a timestamp, leap-second labels (`:60`), invalid dates and excess precision are rejected rather than truncated. Serialization uses UTC ISO text ending in `Z`, including microseconds when present.
 
 ```json
