@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lunar-core"
+version = "0.1.0"
+description = "Scientific engine boundary for Lunar Navigator; no models implemented"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+lunar_core = ["py.typed"]
