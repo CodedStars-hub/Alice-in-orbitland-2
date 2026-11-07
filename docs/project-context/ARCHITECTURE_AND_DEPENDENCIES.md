@@ -15,13 +15,17 @@ The [architecture overview](../architecture/overview.md) and [ADR 0001](../adr/0
 
 Dependency direction is web → HTTP API → lunar_core. The API does not yet invoke scientific core behavior. Core must remain independently usable offline. Python 3.12 and Node 24.19.0/npm 11.x are the documented toolchains; see the root [README](../../README.md) for installation and reproducibility limits.
 
+## Phase 1 extension
+
+`lunar_core.contracts` now implements immutable coordinates, observer, UTC/time interval, explicit configuration, provenance references and scientific status; `lunar_core.errors` defines typed failures. Core still has no runtime dependencies or physical calculations. See [ADR 0002](../adr/0002-scientific-contracts.md). The Phase 0 table above is retained as the baseline snapshot.
+
 ## Proposed scientific data flow
 
 NASA LOLA terrain → observer-specific horizon → SPICE Sun/Earth geometry combined with that horizon → geometric visibility → temporal event detection/intervals → mission metrics → constraints → candidate comparison/optimization.
 
 This is a dependency sketch, not a strict execution order: ephemeris geometry does not depend on terrain, and can be developed separately after shared contracts. Horizon and ephemeris outputs must agree on observer, frames, units, and time conventions before combination.
 
-Planned core responsibilities are coordinate/time contracts, SPICE adapters, terrain sampling, horizon construction, visibility definitions, temporal analysis, constraints, and comparisons. These are not scaffolded implementations. Acquisition records and derived-data processing must follow the [data policy](../../data/README.md); scientific acceptance follows the [validation strategy](../validation/strategy.md).
+Coordinate/time and supporting input contracts are implemented. Planned computational responsibilities are SPICE adapters, terrain sampling, horizon construction, visibility definitions, temporal analysis, constraints, and comparisons. These are not scaffolded implementations. Acquisition records and derived-data processing must follow the [data policy](../../data/README.md); scientific acceptance follows the [validation strategy](../validation/strategy.md).
 
 ## Execution, reuse, and future interfaces
 

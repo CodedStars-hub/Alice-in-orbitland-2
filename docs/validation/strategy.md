@@ -1,6 +1,6 @@
 # Validation strategy
 
-Status: scientifically unvalidated. Current tests verify packaging, HTTP behavior, CORS, and frontend messaging only. No real simulation is authorized or executed in Phase 0.
+Status: scientifically unvalidated. Current tests verify packaging, HTTP behavior, CORS, frontend messaging, and Phase 1 contract invariants (coordinates, observer/time/configuration, serialization, provenance/status and typed failures). These are software verification, not physical model validation. No real simulation is authorized or executed in Phase 0.
 
 Future scientific implementation must begin with explicit contracts and acceptance tolerances justified by requirements:
 

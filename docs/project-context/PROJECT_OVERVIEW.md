@@ -22,4 +22,4 @@ Multi-site/date exploration, mission evaluation, Pareto comparisons, exports, bo
 
 Geometric sunlight is not usable electrical power. Direct-Earth geometric visibility is not link availability or reliable communication. Site suitability is neither landing-safety certification nor a probability of mission success. Missing evidence must not become a silent pass/fail. Execution completion must remain separate from scientific validity and completeness. No NASA endorsement or operational certification is claimed.
 
-Only Phase 0 software exists: packaging, health/CORS API, static frontend, tests, and tooling. See [implementation status](IMPLEMENTATION_STATUS.md); [modeling principles](../science/modeling-principles.md) owns the scientific limitations.
+Phase 0 software and Phase 1 immutable scientific contracts exist: packaging, health/CORS API, static frontend, contracts, tests, and tooling. Scientific analysis remains unimplemented. See [implementation status](IMPLEMENTATION_STATUS.md); [modeling principles](../science/modeling-principles.md) owns the scientific limitations.

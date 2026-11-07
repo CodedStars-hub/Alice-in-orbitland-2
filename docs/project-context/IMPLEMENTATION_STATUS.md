@@ -1,14 +1,14 @@
 # Implementation status
 
-Snapshot: 2026-11-07. Implementation baseline: `c582d144ce5f31de79d55af3ff2e5faed765b9fe` (`chore: bootstrap lunar navigator monorepo`). This documentation milestone is on `docs/project-research-context`, not committed. Update this record when implementation or evidence changes; it is not a live CI badge.
+Snapshot: 2026-11-07. Bootstrap baseline: `c582d144ce5f31de79d55af3ff2e5faed765b9fe`. Documentation merged in `a6082fd` (PR #1). Phase 1 implementation is on `feat/scientific-contracts`, pending PR/CI review. Update this record when implementation or evidence changes; it is not a live CI badge.
 
 ## Evidence-backed state
 
-Phase 0 is implemented. Phase 1 has not started. Core contains only package/version metadata and a typed marker. API provides `/api/v1/health` and explicit configurable CORS. Health returns process availability and `scientific_features: not_implemented`; it is not data/scientific readiness. Frontend is static and does not call the API. Packaging, root checks/locks, optional pre-commit hooks, and Linux GitHub Actions configuration exist.
+Phase 0 is implemented. Phase 1 immutable contracts are implemented, pending PR/CI review: coordinates, observer height labels, UTC intervals, sampling configuration, provenance/status and typed errors. Core remains dependency-free and contains no physical calculations. See [ADR 0002](../adr/0002-scientific-contracts.md). API provides `/api/v1/health` and explicit configurable CORS. Health returns process availability and `scientific_features: not_implemented`; it is not data/scientific readiness. Frontend is static and does not call the API. Packaging, root checks/locks, optional pre-commit hooks, and Linux GitHub Actions configuration exist.
 
-No scientific contracts, SPICE integration/kernels, terrain, horizons, visibility, temporal simulation, mission evaluation, optimization, maps, worker service, database, authentication, exports, cloud deployment, or real scientific benchmark exists. The new context documents preserve plans rather than implementing these features.
+No SPICE integration/kernels, terrain ingestion, horizons, computed visibility, temporal simulation, mission evaluation, optimization, maps, worker service, database, authentication, CSV exports, cloud deployment, or real scientific benchmark exists. JSON input-contract serialization is implemented; it is not scientific result export.
 
-## Existing test coverage
+## Bootstrap test coverage
 
 - Three API tests: health response, allowed/disallowed CORS response headers, wildcard rejection.
 - One core test: installed distribution version matches package metadata.
@@ -17,7 +17,7 @@ No scientific contracts, SPICE integration/kernels, terrain, horizons, visibilit
 
 These are bootstrap behavior tests, not scientific verification. The integration smoke test does not enforce all import boundaries. CORS tests exercise an environment-configured single origin, but lack explicit coverage of empty configurations, multiple/custom nondefault origins, malformed origins/ports, and preflight behavior. No coverage percentage was measured.
 
-## Verification evidence
+## Historical onboarding verification evidence
 
 During onboarding on 2026-11-07, Python 3.12.15, Node 24.19.0 and npm 11.17.0 were observed. Existing dependencies were used without installing/upgrading them.
 
@@ -42,8 +42,17 @@ During Prompt 00B, `git ls-remote origin refs/heads/main` confirmed remote main 
 - `git diff --stat` reports the two tracked modifications; the eight new untracked documents are additional and do not appear in that statistic until staged.
 - No application checks were rerun for documentation-only changes. The software results above are explicitly the earlier onboarding baseline, not a new CI run. No scientific validation was performed.
 
+## Phase 1 verification and remaining delivery steps
+
+- `make check` passed; the final pre-commit project check includes 110 Python tests and 1 Vitest test, Ruff/ESLint, strict mypy, TypeScript and the frontend build. The core suite contains 106 tests (105 new contract cases plus the packaging test).
+- `.venv/bin/python -m pytest packages/lunar_core/tests`: 106 passed. `.venv/bin/python -m pip check`: no broken requirements.
+- `.venv/bin/python -m pre_commit run --all-files`: passed on tracked files; final explicit changed-file hook checks include newly added files.
+- An isolated core wheel install with `pip install --no-build-isolation --no-deps --target <temporary-directory> ./packages/lunar_core`, imported via `python3.12 -I -S`, passed a UTC contract smoke check without site packages or API dependencies.
+- `git diff --check` and local documentation links/structure are checked before commit. No runtime/development dependencies or lockfiles changed. No scientific reference run or physical validation was performed.
+- GitHub connector PR inspection returned repository access errors (HTTP 422). Git transport fetched the documentation merge successfully. Implementation commit `315bdbc` (`feat(science): establish immutable lunar scientific contracts`) was pushed to `origin/feat/scientific-contracts`. PR creation and Actions inspection each returned HTTP 404 through the GitHub connector. No PR was created and remote CI could not be verified. Repository access through the connector is required to finish delivery; do not infer CI success from local checks.
+
 ## Limits and maintenance items
 
-Live GitHub source/PR/Actions state was not inspected. CI is configured, not verified as passing. No fresh install, clean-environment core install, browser interaction test, vulnerability audit, or scientific reference run was performed. The README's historical 10 moderate advisory entries are not a current audit count. Python dependency pins are not artifact-hash locks. The MIT license retains a copyright-holder placeholder. These are review items, not evidence of scientific failure or production exposure.
+GitHub connector inspection was attempted but repository access failed; live PR/Actions state remains unavailable. CI is configured, not verified as passing. No full fresh development-environment install, browser interaction test, vulnerability audit, or scientific reference run was performed. The Phase 1 isolated core install is recorded above. The README's historical 10 moderate advisory entries are not a current audit count. Python dependency pins are not artifact-hash locks. The MIT license retains a copyright-holder placeholder. These are review items, not evidence of scientific failure or production exposure.
 
-Next implementation milestone: explicitly scoped Phase 1 contracts, after documentation review and separate authorization. See the [roadmap](../development/roadmap.md) and [open questions](OPEN_QUESTIONS.md).
+Next implementation milestone after Phase 1 review/merge: separately authorized Phase 2 SPICE integration, with verified kernel/time/frame contracts and coverage handling. See the [roadmap](../development/roadmap.md) and [open questions](OPEN_QUESTIONS.md).

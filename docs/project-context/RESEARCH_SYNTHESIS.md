@@ -1,6 +1,6 @@
 # Research synthesis: RC-01–RC-15
 
-All research statements below derive from supplied summaries [R1/B1](README.md#evidence-register), not direct inspection of the historical conversation or independently verified publications. Repository alignment is checked against L1. Status definitions are in the [index](README.md#evidence-classification); detailed decision records are in the [ledger](SCIENTIFIC_DECISIONS.md). No real scientific benchmark is demonstrated.
+All research statements below derive from supplied summaries [R1/B1](README.md#evidence-register), not direct inspection of the historical conversation or independently verified publications. Repository alignment is checked against L1. Status definitions are in the [index](README.md#evidence-classification); detailed decision records are in the [ledger](SCIENTIFIC_DECISIONS.md). No real scientific benchmark is demonstrated. These case statuses preserve the supplied research snapshot; subsequent Phase 1 representation selections and implementation evidence are recorded in [ADR 0002](../adr/0002-scientific-contracts.md), the decision ledger and implementation status.
 
 ## RC-01 — Mission requirements and existing systems
 
