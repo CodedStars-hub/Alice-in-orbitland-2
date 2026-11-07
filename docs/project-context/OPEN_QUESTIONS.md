@@ -5,9 +5,9 @@ Evidence: [R1/B1](README.md#evidence-register) and inspected gaps in L1. This ba
 | Priority / dependency | Question and current status | Evidence or experiment needed |
 | --- | --- | --- |
 | Before Phase 1 | Exact requirements and scientific MVP tolerances — Unresolved | Recover original conversation/export and review authoritative challenge details; choose bounded site/date/metric acceptance cases |
-| Phase 1 | Longitude interval, pole handling, planetocentric latitude, frame realization, shape, units — Unresolved | Formal contracts, compatible authoritative references, boundary/invalid-input tests |
+| Phase 1 | Frame realization, shape and geometry tolerances — Unresolved; longitude [0, 360), retained pole labels, planetocentric degrees — Accepted and implemented in ADR 0002 | Formal contracts, compatible authoritative references, boundary/invalid-input tests |
 | Phase 1 | Observer height above which surface, along which direction? — Unresolved | Define terrain elevation versus instrument height, vertical direction, and consequences for horizon geometry |
-| Phases 1–2 | UTC representation, ephemeris time, leap seconds, unsupported conversions — Unresolved | Validated SPICE conversion design and leap-second/coverage failure tests; no hand-built unsupported transformations |
+| Phases 1–2 | UTC representation — Accepted and implemented in ADR 0002; ephemeris time/leap-second conversions — Unresolved and unimplemented | Validated SPICE conversion design and leap-second/coverage failure tests; no hand-built unsupported transformations |
 | Phase 2 | Kernel set, versions, load order, frames, aberration/light-time policy — Unresolved | Verified source manifests/checksums, coverage and compatibility review, reproducible reference comparisons |
 | Phase 3 | Exact LOLA DEM/version, coverage, datum, no-data rules, error model — Unresolved | Inspect actual product metadata; sampling and missing-coverage tests; distinguish grid spacing from accuracy |
 | Phase 4 | Near/far terrain, radial reach, curvature, azimuth sampling, interpolation — Provisional research recommendation | Synthetic obstructors and seam cases; spatial convergence, conservative coverage treatment; assess rather than adopt 0.5° precedent |

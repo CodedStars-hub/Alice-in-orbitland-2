@@ -20,12 +20,12 @@ Canonical sources remain [AGENTS.md](../../AGENTS.md), [architecture](../archite
 
 - **R1 — Supplied research summary:** user-provided “Lunar Navigator — Prompt 00B: Persistent Research Knowledge and Project Context”, received 2026-11-07. Its scientific content is preserved in this directory; it is research context, not independent literature verification.
 - **B1 — Supplied onboarding brief:** “LUNAR NAVIGATOR — MASTER PROJECT ONBOARDING, RESEARCH CONSOLIDATION & REPOSITORY AUDIT”, received 2026-11-07. Establishes vision, RC numbering, and the earlier 0–14 roadmap.
-- **L1 — Inspected implementation:** local bootstrap revision `c582d144ce5f31de79d55af3ff2e5faed765b9fe`, plus the documentation changes described here. Source files and canonical documents are directly inspectable.
+- **L1 — Inspected implementation:** local bootstrap revision `c582d144ce5f31de79d55af3ff2e5faed765b9fe`, plus the merged documentation milestone. Phase 1 implementation is described by [ADR 0002](../adr/0002-scientific-contracts.md) and current implementation status. Source files and canonical documents are directly inspectable.
 - **V1 — Local verification:** commands and limits recorded in [implementation status](IMPLEMENTATION_STATUS.md). Software checks are not scientific validation.
 - **H1 — Historical conversation:** [shared ChatGPT link](https://chatgpt.com/share/6aef572d-3ad4-83ee-9b74-e758f5a31c2a), inaccessible during onboarding. No conclusions are attributed to direct inspection of it.
 - **G1 — Repository:** [GitHub repository](https://github.com/CodedStars-hub/Alice-in-orbitland-2). During this milestone, `git ls-remote origin refs/heads/main` confirmed the remote main revision matched L1. Live source/PR/Actions inspection was not performed.
 
-No scientific publication or NASA/NAIF/PDS technical reference was accessed and verified for this documentation milestone. Provider and tool names below identify research directions, not verified citations or finalized asset selections. The official challenge page search summary was visible during onboarding, but its full content was inaccessible; detailed requirements still require review.
+No scientific publication or NASA/NAIF/PDS technical reference was accessed and verified for the original documentation milestone. During Phase 1 the NAIF time and frame required-reading documents were accessed; links and limited application are recorded in the coordinate/time contract documents. Provider and tool names below identify research directions, not verified citations or finalized asset selections. The official challenge page search summary was visible during onboarding, but its full content was inaccessible; detailed requirements still require review.
 
 ## Evidence classification
 

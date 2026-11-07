@@ -16,20 +16,20 @@ Evidence codes and status definitions are in the [index](README.md). R1 is suppl
 
 ## D02 — Coordinates and frames
 
-- **Status:** Provisional research recommendation.
-- **Selected/proposed approach:** East-positive longitude and planetocentric latitude; explicitly select compatible lunar frame realization.
+- **Status:** Accepted and implemented for Phase 1 representation rules in [ADR 0002](../adr/0002-scientific-contracts.md); physical frame realization remains Unresolved.
+- **Selected/proposed approach:** East-positive longitude [0, 360), planetocentric latitude [-90, 90], retained pole meridian labels and distinct symbolic MOON_ME/MOON_PA identities. No transformation or kernel realization.
 - **Reasoning and alternatives:** Make conventions explicit; MOON_ME/MOON_PA require assessment. No documented final alternative selection.
 - **Scientific assumptions:** Lunar geometry, not terrestrial WGS84; shape/reference surface unresolved.
 - **Dependencies:** Authoritative frame/product definitions and Phase 1 contracts.
 - **Implementation consequences:** Specify normalization/poles/units; reject unsupported transformations.
 - **Validation requirements/evidence:** Boundary, invalid-input and compatible transformation checks.
-- **Remaining risks:** Frame realization, normalization and numerical tolerances remain open.
+- **Remaining risks:** Frame realization, reference shape and algorithm-specific numerical tolerances remain open. Normalization is now specified and software-tested.
 - **Source:** R1.
 
 ## D03 — Observer height
 
 - **Status:** Unresolved.
-- **Selected/proposed approach:** No height/reference-surface convention selected.
+- **Selected/proposed approach:** Explicit terrain-relative/reference-surface and radial/surface-normal labels plus reference ID are implemented by ADR 0002; a physical reference surface/vertical realization is not selected.
 - **Reasoning and alternatives:** Horizon depends on observer position; terrain elevation and instrument height must be distinguished. Alternatives not finalized.
 - **Scientific assumptions:** Vertical direction/reference surface require specification.
 - **Dependencies:** D02 and terrain metadata.
@@ -141,7 +141,7 @@ Evidence codes and status definitions are in the [index](README.md). R1 is suppl
 - **Reasoning and alternatives:** Avoid incompatible reuse; cache granularity alternatives not evaluated.
 - **Scientific assumptions:** Horizon/time-series dependencies differ; timeline coverage matters.
 - **Dependencies:** Provenance contracts and measured workloads.
-- **Implementation consequences:** Version identity and invalidation explicitly.
+- **Implementation consequences:** Version identity and invalidation explicitly. Phase 1 implements only configuration-v1 SHA-256 identity, not a full cache key.
 - **Validation requirements/evidence:** Parameter/version changes must invalidate relevant artifacts.
 - **Remaining risks:** Incomplete identity can silently reuse scientifically incompatible results.
 - **Source:** R1.
@@ -165,7 +165,7 @@ Evidence codes and status definitions are in the [index](README.md). R1 is suppl
 - **Reasoning and alternatives:** Reproduction and auditability; existing policy is implemented as documentation, result recording is not.
 - **Scientific assumptions:** No manifest field values may be invented.
 - **Dependencies:** Verified assets and scientific contracts.
-- **Implementation consequences:** Fail on mismatch; preserve derived lineage; JSON/CSV schemas remain provisional.
+- **Implementation consequences:** Phase 1 implements immutable provenance references, ordered kernel metadata, SHA-256 shape validation and JSON codecs. Byte verification, acquisition manifests, derived lineage and CSV export remain unimplemented.
 - **Validation requirements/evidence:** Reproduction, checksum failures, export round trips and version review.
 - **Remaining risks:** PDS4/PROV are guiding concepts, not selected infrastructure.
 - **Source:** R1; L1 data policy.
@@ -205,3 +205,7 @@ Evidence codes and status definitions are in the [index](README.md). R1 is suppl
 - **Validation requirements/evidence:** Scope-specific reliability/security/release review when authorized.
 - **Remaining risks:** Roadmap presence must not be treated as implementation permission.
 - **Source:** R1; L1 ADR/roadmap.
+
+## Phase 1 evidence
+
+The authorized Phase 1 prompt selects the representation rules recorded in [ADR 0002](../adr/0002-scientific-contracts.md); contract software checks are recorded in [implementation status](IMPLEMENTATION_STATUS.md). R1 remains historical supplied research. No provisional horizon, visibility, event, map or optimization algorithm has been promoted into a validated implementation.
